@@ -1,5 +1,5 @@
 import java.io.PrintWriter;
-
+/* A class for the VigenereCypher implementation. Author John Miller */
 public class VigenereCypher {
 
     /*
