@@ -2,6 +2,7 @@
 /*Honesty/introductory statement: this is a program for the mini-project #1: classical encryption.
 all work is my own, I was also shown instruction on subtracting the 'a' bias from the 
 mini-project instructions, written by P.M. Osera and adapted by Sam Rebelsky*/
+//@Author John Miller
 
 import java.io.PrintWriter;
 
