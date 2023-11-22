@@ -5,7 +5,7 @@ mini-project instructions, written by P.M. Osera and adapted by Sam Rebelsky*/
 //@Author John Miller
 
 import java.io.PrintWriter;
-
+/*A class for making the CaesarCypher*/
 public class CaesarCypher {// class declaration
 
     /*
