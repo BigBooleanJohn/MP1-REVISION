@@ -24,8 +24,7 @@ public class CaesarCypher {// class declaration
         {
             System.err.printf("Error in %s function: you have entered insufficient commands", functionName);
             System.exit(1);
-        } else if (sequence[0].compareTo("encode") != 0 && sequence[0].compareTo("decode") != 0)// handling improper
-                                                                                                // command
+        } else if (sequence[0].compareTo("encode") != 0 && sequence[0].compareTo("decode") != 0)
         {
             System.err.println("your first input must be either 'code' or 'decode'");
             System.exit(1);
@@ -46,37 +45,33 @@ public class CaesarCypher {// class declaration
      * sequence array
      */
     public static String caesarCypher(int n, String[] sequence) {
-        ErrorHandling(sequence, 2, "CaesarCypher");// calling a helper error handler to ckeck for parameters and
-                                                   // correctness of parameters
-        if (sequence[0].compareTo("encode") == 0)// if the command is to cypher
+        ErrorHandling(sequence, 2, "CaesarCypher");
+        if (sequence[0].compareTo("encode") == 0)
         {
-            char[] inputArr = sequence[1].toCharArray(); // converting the string to an array to mutate it
+            char[] inputArr = sequence[1].toCharArray();
             for (int i = 0; i < inputArr.length; i++) {
-                int x = (((inputArr[i] - 'a') + n) % 26) + 'a';// converting inputArr to a val between 0 and 26 "basing
-                                                               // it", and adding the n code bias, then reconverting to
-                                                               // the char range
-                inputArr[i] = (char) x;// casting the new val to a char, and setting it in the array
+                int x = (((inputArr[i] - 'a') + n) % 26) + 'a';
+                inputArr[i] = (char) x;
             }
-            String returnString = new String(inputArr);// converting our new char array to a string
+            String returnString = new String(inputArr);
             return returnString;
         }
         if (sequence[0].compareTo("decode") == 0)// if the command is decypher
         {
-            char[] inputArr = sequence[1].toCharArray(); // converting the string to an array to mutate it
+            char[] inputArr = sequence[1].toCharArray(); 
             for (int i = 0; i < inputArr.length; i++) {
-                int x = (inputArr[i] - 'a') - n;// converting inputArr to a val between 0 and 26 ("basing it"), and
-                                                // subtracting n
+                int x = (inputArr[i] - 'a') - n;
                 if (x < 0) {
-                    x = x * -1; // getting the absolute value of x
-                    x = (26 - x) + 'a';// wrapping it back around and resetting it into the character range
-                    inputArr[i] = (char) x;// casting the new val to a char, and setting it in the array
+                    x = x * -1; 
+                    x = (26 - x) + 'a';
+                    inputArr[i] = (char) x;
 
                 } else {
                     x = x + 'a';
-                    inputArr[i] = (char) x;// casting the new val to a char, and setting it in the array
+                    inputArr[i] = (char) x;
                 }
             }
-            String returnString = new String(inputArr);// converting our new char array to a string
+            String returnString = new String(inputArr);
             return returnString;
         }
         return null;
